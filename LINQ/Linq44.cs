@@ -22,13 +22,13 @@ namespace LINQ
 				var K1 = taskData[k - 2][0];
 				var K2 = taskData[k - 2][1];
 
-				var greaterThanD = taskData[k - 1].
+				var numbers = taskData[k - 1].
 					Where(x => x > K1).
 					Concat(taskData[k].
 						Where(x => x < K2)).
 					OrderBy(x=>x);
 				
-				foreach (var variable in greaterThanD)
+				foreach (var variable in numbers)
 				{
 					File.AppendAllText(writePath, variable.ToString());
 					File.AppendAllText(writePath, " ");
