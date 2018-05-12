@@ -6,22 +6,38 @@ namespace LINQ
 {
     public class Misc
     {
-        public static void ParseInts(List<List<int>> listName, string pathName)
-        {
-            var lines = File.ReadAllLines(pathName);
-            
-            foreach (var line in lines)
-            {
-                var dataRow = new List<int>();
-                var numbers = line.Split(' ');
-                foreach (var number in numbers)
-                {
-                    int.TryParse(number, out var result);
-                    dataRow.Add(result);
-                }
-                listName.Add(dataRow);
-            }
-        }
+		public static void ParseInts(List<List<int>> listName, string pathName)
+		{
+			var lines = File.ReadAllLines(pathName);
+			
+			foreach (var line in lines)
+			{
+				var dataRow = new List<int>();
+				var numbers = line.Split(' ');
+				foreach (var number in numbers)
+				{
+					int.TryParse(number, out var result);
+					dataRow.Add(result);
+				}
+				listName.Add(dataRow);
+			}
+		}
+	    
+	    public static void ParseStrings (List<List<string>> listName, string pathName)
+	    {
+		    var lines = File.ReadAllLines(pathName);
+			
+		    foreach (var line in lines)
+		    {
+			    var dataRow = new List<string>();
+			    var words = line.Split(' ');
+			    foreach (var word in words)
+			    {
+				    dataRow.Add(word);
+			    }
+			    listName.Add(dataRow);
+		    }
+	    }
 
         public static string CurrentDir()
         {
