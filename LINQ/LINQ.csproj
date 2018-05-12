@@ -47,6 +47,7 @@
     <Compile Include="Linq18.cs" />
     <Compile Include="Linq19.cs" />
     <Compile Include="Linq20.cs" />
+    <Compile Include="Linq44.cs" />
     <Compile Include="Misc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,11 +61,15 @@
     <Content Include="Data files\Task18.txt" />
     <Content Include="Data files\Task19.txt" />
     <Content Include="Data files\Task20.txt" />
+    <Content Include="Data files\Task44.txt" />
+    <Content Include="Data files\Task45.txt" />
     <Content Include="Result files\Task16.txt" />
     <Content Include="Result files\Task17.txt" />
     <Content Include="Result files\Task18.txt" />
     <Content Include="Result files\Task19.txt" />
     <Content Include="Result files\Task20.txt" />
+    <Content Include="Result files\Task44.txt" />
+    <Content Include="Result files\Task45.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,7 +10,7 @@ namespace LINQ
     {
         static void Main(string[] args)
         {
-            Linq20.TaskMain();
+            Linq44.TaskMain();
         }
     }
 }
