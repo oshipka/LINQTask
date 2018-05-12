@@ -26,11 +26,11 @@ namespace LINQ
         }
     }
 
-    class WordsComparer:IComparer<string>
+    internal class WordsComparer:IComparer<string>
     {
         public int Compare(string x, string y)
         {
-            return y != null && (x != null && x.Length == y.Length) ? x[0].CompareTo(y[0]) : x.Length.CompareTo(y.Length);
+            return x.Length == y.Length ? -string.CompareOrdinal(x, y) : x.Length.CompareTo(y.Length);
         }
     }
 }
