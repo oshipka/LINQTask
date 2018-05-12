@@ -46,6 +46,7 @@
     <Compile Include="Linq17.cs" />
     <Compile Include="Linq18.cs" />
     <Compile Include="Linq19.cs" />
+    <Compile Include="Linq20.cs" />
     <Compile Include="Misc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
