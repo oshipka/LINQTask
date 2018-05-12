@@ -42,11 +42,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Linq16.cs" />
+    <Compile Include="Misc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data files\Task16.txt" />
+    <Content Include="Data files\Task17.txt" />
+    <Content Include="Data files\Task18.txt" />
+    <Content Include="Data files\Task19.txt" />
+    <Content Include="Data files\Task20.txt" />
+    <Content Include="Result files\Task16.txt" />
+    <Content Include="Result files\Task17.txt" />
+    <Content Include="Result files\Task18.txt" />
+    <Content Include="Result files\Task19.txt" />
+    <Content Include="Result files\Task20.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
