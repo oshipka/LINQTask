@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 
 namespace LINQ
@@ -42,11 +43,11 @@ namespace LINQ
 		public static void ParseClients (List<Client> listName, string pathName)
 		{
 			var lines = File.ReadAllLines(pathName);
-			
-			foreach (var line in lines)
+			for (var i=2; i< lines.Length; i++)
+			//foreach (var line in lines)
 			{
 				var dataRow = new Client();
-				var words = line.Split(' ');
+				var words = lines[i].Split(' ');
 				if (words.Length > 4)
 				{
 					throw new InvalidDataException("Incorrect input line");
@@ -54,7 +55,10 @@ namespace LINQ
 				if((!int.TryParse(words[0], out var code))||
 				   (!int.TryParse(words[1], out var year))||
 				   (!int.TryParse(words[2], out var month))||
-				   (!int.TryParse(words[3], out var time)))
+				   (!double.TryParse(words[3],
+					   NumberStyles.Number | NumberStyles.AllowCurrencySymbol,
+					   CultureInfo.InvariantCulture,
+					   out var time)))
 				{
 					throw new InvalidDataException("Entered data is invalid");
 				}

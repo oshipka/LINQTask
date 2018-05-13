@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace LINQ
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Linq16.TaskMain();
-            Linq17.TaskMain();
-            Linq18.TaskMain();
-            Linq19.TaskMain();
-            Linq20.TaskMain();
-            Linq44.TaskMain();
-            Linq45.TaskMain();
-        }
-    }
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			/*Linq16.TaskMain();
+			Linq17.TaskMain();
+			Linq18.TaskMain();
+			Linq19.TaskMain();
+			Linq20.TaskMain();
+			Linq44.TaskMain();
+			Linq45.TaskMain();*/
+			LinqObj.TaskMain();
+		}
+	}
 }

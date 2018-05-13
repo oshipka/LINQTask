@@ -1,0 +1,7 @@
+Follow the following format:
+Client code, year, month's number, time spent by client (use "." to separate decimal part)
+42 2016 2 120.65
+42 2015 2 1.23
+43 2016 2 300
+45 2013 5 10
+45 2015 1 400.25

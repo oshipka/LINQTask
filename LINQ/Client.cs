@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Security.Policy;
 
 namespace LINQ
 {
 	public class Client
 	{
-		public Client(int code, int year, int month, int time)
+		public Client()
 		{
-			ClientCode = code;
-			Year = year;
-			Month = month;
-			TimeSpent = time;
+			ClientCode = 0;
+			Year = 0;
+			Month = 0;
+			TimeSpent = 0;
 		}
-		
-		public Client(){}
 
 		public int Year { get; set; }
 
@@ -22,5 +19,31 @@ namespace LINQ
 		public double TimeSpent { get; set; }
 
 		public int ClientCode { get; set; }
+
+		public override string ToString()
+		{
+			var result = "";
+			if (ClientCode != 0)
+			{
+				result += "Client code: " + ClientCode + " ";
+			}
+
+			if (Year != 0)
+			{
+				result += "Year: " + Year + " ";
+			}
+
+			if (Month != 0)
+			{
+				result += "Month: " + Month + " ";
+			}
+
+			if (Math.Abs(TimeSpent) > 0.1)
+			{
+				result += "Time spent: " + TimeSpent + "\n";
+			}
+
+			return result;
+		}
 	}
 }
