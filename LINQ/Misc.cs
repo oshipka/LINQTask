@@ -72,12 +72,14 @@ namespace LINQ
 
 		public static void WriteData<T>(IEnumerable<T> query, string pathName, string typeOfData = "")
 		{
+			if (typeof(T) == typeof(Client))
+			{
+				File.AppendAllText(pathName, typeOfData + ":\n");
+			}
+
 			foreach (var variable in query)
 			{
-				if (typeof(T) == typeof(Client))
-				{
-					File.AppendAllText(pathName, typeOfData+": ");
-				}
+				
 				File.AppendAllText(pathName, variable.ToString());
 				File.AppendAllText(pathName, " ");
 			}

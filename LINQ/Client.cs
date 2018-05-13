@@ -40,10 +40,10 @@ namespace LINQ
 
 			if (Math.Abs(TimeSpent) > 0.1)
 			{
-				result += "Time spent: " + TimeSpent + "\n";
+				result += "Time spent: " + TimeSpent; 
 			}
 
-			return result;
+			return result+ "\n";
 		}
 	}
 }

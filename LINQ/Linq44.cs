@@ -17,17 +17,17 @@ namespace LINQ
 			{
 				throw new InvalidDataException($"Not enough data, count = {taskData.Count}");
 			}
-			for (var k =2; k<taskData.Count; k+=3)
-			{
-				var K1 = taskData[k - 2][0];
-				var K2 = taskData[k - 2][1];
 
-				var numbers = taskData[k - 1].
-					Where(x => x > K1).
-					Concat(taskData[k].
-						Where(x => x < K2)).
-					OrderBy(x=>x);
-				
+			for (var k = 2; k < taskData.Count; k += 3)
+			{
+				var k1 = taskData[k - 2][0];
+				var k2 = taskData[k - 2][1];
+
+				var numbers = taskData[k - 1]
+					.Where(x => x > k1)
+					.Concat(taskData[k].Where(x => x < k2))
+					.OrderBy(x => x);
+
 				Misc.WriteData(numbers, writePath);
 			}
 		}

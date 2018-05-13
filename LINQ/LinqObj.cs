@@ -53,12 +53,29 @@ namespace LINQ
 		
 		private static void EachClientTotalTimeSpent(List<Client> clientsList, string pathName)
 		{
-			
+			var result = clientsList
+				.GroupBy(y => y.ClientCode)
+				.Select(r => new Client
+				{
+					ClientCode = r.Key,
+					TimeSpent = r.Sum(s => s.TimeSpent)
+				})
+				.OrderByDescending(t => t.TimeSpent);
+
+			Misc.WriteData(result, pathName, "Total time spent by each client");
 		}
 		
 		private static void EachClientTotalMonths(List<Client> clientsList, string pathName)
 		{
-			
+			var result = clientsList
+				.GroupBy(y => y.ClientCode)
+				.Select(r => new Client
+				{
+					ClientCode = r.Key,
+					Month = r.Count()
+				});
+
+			Misc.WriteData(result, pathName, "Total number of months spent by each client");
 		}
 	}
 }
