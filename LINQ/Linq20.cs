@@ -22,13 +22,7 @@ namespace LINQ
             {
                 var D = taskData[k - 1][0];
                 var greaterThanD = taskData[k].SkipWhile(x => x < D).Where(x=>(x%2==1 && x>0)).Reverse();
-                
-                foreach (var variable in greaterThanD)
-                {
-                    File.AppendAllText(writePath, variable.ToString());
-                    File.AppendAllText(writePath, " ");
-                }
-                File.AppendAllText(writePath, Environment.NewLine);
+                Misc.WriteData(greaterThanD, writePath);
             }
         }
     }

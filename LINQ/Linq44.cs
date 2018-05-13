@@ -28,12 +28,7 @@ namespace LINQ
 						Where(x => x < K2)).
 					OrderBy(x=>x);
 				
-				foreach (var variable in numbers)
-				{
-					File.AppendAllText(writePath, variable.ToString());
-					File.AppendAllText(writePath, " ");
-				}
-				File.AppendAllText(writePath, Environment.NewLine);
+				Misc.WriteData(numbers, writePath);
 			}
 		}
 	}

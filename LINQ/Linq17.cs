@@ -17,13 +17,7 @@ namespace LINQ
 			{
 				var odd = from i in dataLine where i % 2 == 1 select i;
 				var noRepeat = odd.Distinct(new Comparer());
-				foreach (var variable in noRepeat)
-				{
-					File.AppendAllText(writePath, variable.ToString());
-					File.AppendAllText(writePath, " ");
-				}
-
-				File.AppendAllText(writePath, Environment.NewLine);
+				Misc.WriteData(noRepeat, writePath);
 			}
 		}
 	}

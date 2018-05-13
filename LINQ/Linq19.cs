@@ -16,12 +16,7 @@ namespace LINQ
             foreach (var dataLine in taskData)
             {
                 var sortedWords = dataLine.OrderBy(x => x, new WordsComparer());
-                foreach (var variable in sortedWords)
-                {
-                    File.AppendAllText(writePath, variable.ToString());
-                    File.AppendAllText(writePath, " ");
-                }
-                File.AppendAllText(writePath, Environment.NewLine);
+                Misc.WriteData(sortedWords, writePath);
             }
         }
     }

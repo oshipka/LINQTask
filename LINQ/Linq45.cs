@@ -32,12 +32,7 @@ namespace LINQ
 						Where(x => x.Length == l2)).
 					OrderByDescending(x=>x);
 				
-				foreach (var variable in words)
-				{
-					File.AppendAllText(writePath, variable.ToString());
-					File.AppendAllText(writePath, " ");
-				}
-				File.AppendAllText(writePath, Environment.NewLine);
+				Misc.WriteData(words, writePath);
 			}
 		}
 	}

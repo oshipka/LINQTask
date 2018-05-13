@@ -18,12 +18,7 @@ namespace LINQ
 			foreach (var dataLine in taskData)
 			{
 				var positive = from i in dataLine where i > 0 select i;
-				foreach (var variable in positive)
-				{
-					File.AppendAllText(writePath, variable.ToString());
-					File.AppendAllText(writePath, " ");
-				}
-				File.AppendAllText(writePath, Environment.NewLine);
+				Misc.WriteData(positive, writePath);
 			}
 		}
 	}

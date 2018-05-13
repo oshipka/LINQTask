@@ -66,6 +66,20 @@ namespace LINQ
 			}
 		}
 
+		public static void WriteData<T>(IEnumerable<T> query, string pathName, string typeOfData = "")
+		{
+			foreach (var variable in query)
+			{
+				if (typeof(T) == typeof(Client))
+				{
+					File.AppendAllText(pathName, typeOfData+": ");
+				}
+				File.AppendAllText(pathName, variable.ToString());
+				File.AppendAllText(pathName, " ");
+			}
+			File.AppendAllText(pathName, Environment.NewLine);
+		}
+		
 		public static string CurrentDir()
 		{
 			var directory = Directory.GetCurrentDirectory();

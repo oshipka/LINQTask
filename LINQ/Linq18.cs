@@ -16,12 +16,7 @@ namespace LINQ
             foreach (var dataLine in taskData)
             {
                 var positiveEven = from i in dataLine where (i%2 == 0 && i > 9 && i< 100) orderby i select i;
-                foreach (var variable in positiveEven)
-                {
-                    File.AppendAllText(writePath, variable.ToString());
-                    File.AppendAllText(writePath, " ");
-                }
-                File.AppendAllText(writePath, Environment.NewLine);
+                Misc.WriteData(positiveEven, writePath);
             }
         }
     }
